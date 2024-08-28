@@ -6,11 +6,13 @@ class Solution(object):
         """
         if len(nums) > 0:
             result = 1
+            if len(nums) == 1:
+                return result
         else:
             result = 0
-        tail_index = 0
+        tail_index = 1
         tail_elem = nums[tail_index]
-        last_unique_elem_index = 0
+        last_unique_elem_index = 1
         while tail_index < len(nums):
             tail_elem = nums[tail_index - 1]
             if tail_elem != nums[tail_index]:
