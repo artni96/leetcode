@@ -5,9 +5,16 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        nums1 = set(nums1)
-        nums2 = set(nums2)
-        return list(set(nums1.intersection(nums2)))
+        # nums1 = set(nums1)
+        # nums2 = set(nums2)
+        # return list(set(nums1.intersection(nums2)))
+        nums1 = sorted(nums1)
+        nums2 = sorted(nums2)
+        result = list()
+        if len(nums1) <= len(nums2):
+            counter = 0
+            while len(nums1) > 0:
+                nums1
 
 
 test_data_1_nums1 = [1, 2, 2, 1]
