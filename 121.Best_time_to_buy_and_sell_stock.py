@@ -4,19 +4,19 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
+        l, r = 0, 1
         result = 0
-        to_buy = 0
-        to_sell = 1
-        while to_sell < len(prices):
-            if prices[to_sell] > prices[to_buy]:
-                result = max(result, prices[to_sell] - prices[to_buy])
+        while r < len(prices):
+            cur_result = prices[r] - prices[l]
+            if prices[l] < prices[r]:
+                result = max(result, cur_result)
             else:
-                to_buy = to_sell
-            to_sell += 1
+                l = r
+            r += 1
         return result
 
 
-test_1 = [7, 1, 5, 3, 6, 4]
+test_1 = [7, 3, 5, 1, 6, 4]
 test_2 = [7, 6, 4, 3, 1]
 print(Solution().maxProfit(test_1))
 print(Solution().maxProfit(test_2))
